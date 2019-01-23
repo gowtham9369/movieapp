@@ -1,0 +1,142 @@
+<!-- <img src="{{movieSummary.image_url}}">
+<p>
+  {{movieSummary.title}}
+</p>
+<p>
+  {{movieSummary.duration}}
+</p>
+<p>
+  {{movieSummary.views}}
+</p>
+<p>
+  {{movieSummary.percentage}}
+</p> -->
+
+<!-- logo, menu, search, avatar -->
+<div class="container-fluid">
+  <div class="row">
+      <div class="navbar-container">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-3 visible-xs">
+                  <a href="#" class="btn-menu-toggle"><i class="cv cvicon-cv-menu"></i></a>
+              </div>
+              <div class="col-lg-1 col-sm-2 col-xs-6">
+                <a class="nav-link"><h3>ABC Movies</h3></a>
+              </div>
+              <div class="col-lg-3 col-sm-10 hidden-xs">
+              </div>
+              <div class="col-lg-6 col-sm-8 col-xs-3">
+                      <div class="topsearch">
+                          <i class="cv cvicon-cv-cancel topsearch-close"></i>
+                          <div class="input-group">
+                              <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+                              <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+                              <div class="input-group-btn">
+                                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;&nbsp;&nbsp;<span class="caret"></span></button>
+                              </div><!-- /btn-group -->
+                          </div>
+                      </div>
+              </div>
+              <div class="col-lg-2 col-sm-4 hidden-xs">
+                  <div class="avatar pull-left">
+                      <img src="../assets/gowthamm.jpg" alt="avatar" class="admin"/>
+                      <span class="status"></span>
+                  </div>
+                  <div class="selectuser pull-left">
+                      <div class="btn-group pull-right dropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              XYZ
+                          </button>
+                      </div>
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+          </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /logo -->
+
+<!-- goto -->
+<div class="container-fluid hidden-xs">
+  <div class="row">
+      <div class="navbar-container2">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-2 col-sm-6 hidden-xs">
+                      <div class="goto">
+                         <a routerLink="/Movie-app"><< Back</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /goto -->
+
+<div class="content-wrapper">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="sv-video">
+                  <video poster="{{movieSummary.image_url}}" style="width:100%;height:500px;" controls="controls" width="100%" height="100%">
+                  </video>
+                  <!-- <span class="sv-play"><i class="cv cvicon-cv-play"></i></span> -->
+              </div>
+              <h2><a>{{movieSummary.title}}</a></h2>
+              <div class="acide-panel acide-panel-top">
+                  <a href="#"><i class="cv cvicon-cv-watch-later" data-toggle="tooltip" data-placement="top" title="Watch Later"></i></a>
+                  <a href="#"><i class="cv cvicon-cv-liked" data-toggle="tooltip" data-placement="top" title="Liked"></i></a>
+                  <a href="#"><i class="cv cvicon-cv-flag" data-toggle="tooltip" data-placement="top" title="Flag"></i></a>
+              </div>
+              <div class="info">
+                  <div class="custom-tabs">
+                      <div class="clearfix"></div>
+
+                      <!-- BEGIN tabs-content -->
+                      <div class="tabs-content">
+                          <!-- BEGIN tab-1 -->
+                          <div class="tab-1">
+                              <ul class="list-inline">
+                                  <li><i class="fa fa-clock-o" aria-hidden="true"></i> Duration :<a > {{movieSummary.duration}}</a></li>
+                                  <li><i class="fa fa-star" aria-hidden="true"></i> Rating :<a > {{movieSummary.percentage}}</a></li>
+                                  <li><i class="fa fa-eye" aria-hidden="true"></i> Views:<a class="hidden-xs"> {{movieSummary.views}}</a></li>
+                              </ul>
+                              <details open>
+                                  <summary  style="font-size: 20px;">About :</summary>
+                                  <p>{{movieSummary.summary}}</p>
+                                </details>
+                          </div>
+                          <!-- END tab-1 -->
+                      </div>
+                      <!-- END tabs-content -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- footer -->
+<footer>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="container padding-def">
+              <div class="col-lg-7 col-sm-6 col-xs-12">
+                  <div class="f-copy">
+                      <ul class="list-inline">
+                          <li><a href="#">Terms</a></li>
+                          <li><a href="#">Privacy</a></li>
+                          <li>Copyrights 2019 <a routerLink="#" class="hidden-xs">XYZ.com</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+

@@ -8,16 +8,21 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 // pipe transform filter
 import { FilterPipe } from './filter.pipe';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MovieGridComponent } from './movie-grid/movie-grid.component';
 
 const appRoutes: Routes = [
-  { path: 'Movie-app',      component: AppComponent }, 
+  { path: 'Movie-app',      component: MovieGridComponent }, 
+  { path: 'MovieSummary',      component: MovieDetailsComponent }, 
   { path: '',    redirectTo: 'Movie-app',  pathMatch: 'full'  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilterPipe
+    FilterPipe,
+    MovieDetailsComponent,
+    MovieGridComponent
   ],
   imports: [
     BrowserModule,

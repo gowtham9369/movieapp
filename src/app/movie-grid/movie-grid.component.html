@@ -1,0 +1,129 @@
+<!-- logo, menu, search, avatar -->
+<div class="container-fluid">
+  <div class="row">
+      <div class="navbar-container">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xs-3 visible-xs">
+                      <a href="#" class="btn-menu-toggle"><i class="cv cvicon-cv-menu"></i></a>
+                  </div>
+                  <div class="col-lg-1 col-sm-2 col-xs-6">
+                    <a class="nav-link"><h3>ABC Movies</h3></a>
+                  </div>
+                  <div class="col-lg-3 col-sm-10 hidden-xs">
+                  </div>
+                  <div class="col-lg-6 col-sm-8 col-xs-3">
+                          <div class="topsearch">
+                              <i class="cv cvicon-cv-cancel topsearch-close"></i>
+                              <div class="input-group">
+                                  <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+                                  <input type="text" [(ngModel)]="filter" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+                                  <div class="input-group-btn">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;&nbsp;&nbsp;<span class="caret"></span></button>
+                                  </div><!-- /btn-group -->
+                              </div>
+                          </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-4 hidden-xs">
+                      <div class="avatar pull-left">
+                          <img src="../assets/gowthamm.jpg" alt="avatar" class="admin"/>
+                          <span class="status"></span>
+                      </div>
+                      <div class="selectuser pull-left">
+                          <div class="btn-group pull-right dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  XYZ
+                              </button>
+                          </div>
+                      </div>
+                      <div class="clearfix"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /logo -->
+
+<div class="content-wrapper">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+
+              <!-- Featured Videos -->
+              <div class="content-block head-div">
+                  <div class="cb-header">
+                      <div class="row">
+                          <div class="col-lg-10 col-sm-10 col-xs-8">
+                              <ul class="list-inline">
+                                  <li>
+                                      <a href="#" class="color-active">
+                                          <span class="visible-xs">Featured</span>
+                                          <span class="hidden-xs">Featured Movies</span>
+                                      </a>
+                                  </li>
+                                  <li><a href="#">New Movies</a></li>
+                                  <li class="hidden-xs"><a href="#">Recommended For You</a></li>
+                              </ul>
+                          </div>
+                          <div class="col-lg-2 col-sm-2 col-xs-4">
+                              <div class="btn-group pull-right bg-clean">
+                                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Sort by <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                      <li><a href="#"> Relevant</a></li>
+                                      <li><a href="#"> Recent</a></li>
+                                      <li><a href="#"> Viewed</a></li>
+                                      <li><a href="#"> Top Rated</a></li>
+                                      <li><a href="#"> Longest</a></li>
+                                  </ul>
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cb-content videolist">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 videoitem" *ngFor="let item of contentGeneral| gridFilter:{duration: filter, title:filter,views: filter,percentage:filter}; let i=index;">
+                            <a (click)="getMovieDetails(i)"><div class="b-video">
+                                <div class="v-img">
+                                    <a ><img src="{{item.image_url}}" alt=""></a>
+                                    <div class="time">{{item.duration}}</div>
+                                </div>
+                                <div class="v-desc">
+                                    <a >{{item.title}}</a>
+                                </div>
+                                <div class="v-views">
+                                    {{item.views}} views. <span class="v-percent"><span class="v-circle"></span>{{item.percentage}}</span>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!-- /Featured Videos -->
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- footer -->
+<footer>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="container padding-def">
+              <div class="col-lg-7 col-sm-6 col-xs-12">
+                  <div class="f-copy">
+                      <ul class="list-inline">
+                          <li><a href="#">Terms</a></li>
+                          <li><a href="#">Privacy</a></li>
+                          <li>Copyrights 2019 <a routerLink="#" class="hidden-xs">XYZ.com</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- /footer -->
